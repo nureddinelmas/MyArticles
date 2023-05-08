@@ -15,7 +15,8 @@ fun SetupNavigation(navController: NavHostController){
 		Screens(navController)
 	}
 	
-	NavHost(navController = navController, startDestination = LIST_SCREEN){
+	NavHost(navController = navController,
+		startDestination = LIST_SCREEN){
 		listComposable(
 			navigateToArticleScreen = screen.article
 		)

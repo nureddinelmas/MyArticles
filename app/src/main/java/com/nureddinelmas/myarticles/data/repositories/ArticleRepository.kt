@@ -7,27 +7,27 @@ import javax.inject.Inject
 
 class ArticleRepository @Inject constructor(private val articleDao: ArticleDao) {
 	
-	val getAllTask: Flow<List<ArticleModel>> = articleDao.getAllTask()
+	val getAllArticles: Flow<List<ArticleModel>> = articleDao.getAllArticles()
 	val sortByLowPriority : Flow<List<ArticleModel>> = articleDao.sortByLowPriority()
 	val sortByHighPriority : Flow<List<ArticleModel>> = articleDao.sortByHighPriority()
 	
-	fun getSelectedTask(articleId: Int): Flow<ArticleModel> {
+	fun getAllArticle(articleId: Int): Flow<ArticleModel> {
 		return articleDao.getSelectedArticle(articleId)
 	}
 	
-	suspend fun addTask(articleModel: ArticleModel) {
+	suspend fun addArticle(articleModel: ArticleModel) {
 		articleDao.addArticle(articleModel)
 	}
 	
-	suspend fun updateTask(articleModel: ArticleModel) {
+	suspend fun updateArticle(articleModel: ArticleModel) {
 		articleDao.updateArticle(articleModel)
 	}
 	
-	suspend fun deleteTask(articleModel: ArticleModel) {
+	suspend fun deleteArticle(articleModel: ArticleModel) {
 		articleDao.deleteArticle(articleModel)
 	}
 	
-	suspend fun deleteAllTask() {
+	suspend fun deleteAllArticles() {
 		articleDao.deleteAllArticle()
 	}
 	

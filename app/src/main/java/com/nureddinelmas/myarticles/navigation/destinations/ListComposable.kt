@@ -4,6 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.nureddinelmas.myarticles.ui.screens.list.ListScreen
 import com.nureddinelmas.myarticles.util.Constants.LIST_ARGUMENT_KEY
 import com.nureddinelmas.myarticles.util.Constants.LIST_SCREEN
 
@@ -13,6 +14,6 @@ fun NavGraphBuilder.listComposable(navigateToArticleScreen: (Int) -> Unit ){
 		type = NavType.StringType
 	}
 	)){
-	
+	ListScreen(navigateToArticleScreen = navigateToArticleScreen)
 	}
 }

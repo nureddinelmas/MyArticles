@@ -18,7 +18,7 @@ class SharedViewModel @Inject constructor(private val repository: ArticleReposit
 	
 	fun getAllTask() {
 		viewModelScope.launch {
-			repository.getAllTask.collect{
+			repository.getAllArticles.collect{
 				_allArticles.value = it
 			}
 		}
